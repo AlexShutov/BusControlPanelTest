@@ -33,10 +33,14 @@
   - `8-Burn operation/` — готовые bin (P4 V2.1/V2.2/V2.3 для P4_V3X, C6-slave v2.3.2, xiaozhi 2.0.4), flash_download_tool 3.9.9; прошивать через USB2, ток ≥600 mA
 
 ## Инструменты
-- ESP-IDF / idf.py на системе не установлены
+- ESP-IDF v6.0.3 установлен в `~/esp/esp-idf` (клон v6.0.3, --recursive); активация: `. ~/esp/esp-idf/export.sh`
+- Тулчейны в `~/.espressif` (macos-arm64): xtensa-esp-elf (S3), riscv32-esp-elf (P4/C6), gdb, openocd, esp-rom-elfs; цели esp32p4 и esp32s3 установлены через `./install.sh esp32p4,esp32s3`
+- IDF 6.0.x нужна этой плате (чип rev v3.2 = «P4_3X», у старых плат rev 1.x хватило бы 5.5.4); v6.0.3 поддерживает и esp32p4, и esp32s3
+- Prerequisites через brew: cmake, ninja, dfu-util, ccache (+ python3 3.15 Homebrew)
 - esptool доступен через `uvx esptool ...` (v5: `uvx esptool --port /dev/cu.usbmodem101 chip-id`)
 - Python 3.15 (Homebrew), есть `uv`
 - gh CLI установлен (`/opt/homebrew/bin/gh`), авторизован как AlexShutov (HTTPS)
+- PlatformIO установлен (~/.platformio, CLI ~/.platformio/penv/bin/pio) с espressif32 6.8.0 — но он НЕ поддерживает ESP32-P4 (нет Arduino core 3.x); для P4 использовать ESP-IDF или pioarduino
 
 ## Git
 - Репозиторий: https://github.com/AlexShutov/BusControlPanelTest (public), ветка main
