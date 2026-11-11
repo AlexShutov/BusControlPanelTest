@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Vendor docs: ~1.4 GB, превышают лимиты GitHub — качаются заново по инструкции из AGENTS.md
+docs/JC4880P443C_I_W*
+
 # ESP-IDF / build artifacts
 build/
 managed_components/
